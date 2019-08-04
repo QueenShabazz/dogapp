@@ -15,7 +15,8 @@ function displayResults(responseJson){
     $('.results-img').empty();
     for (let i=0; i<responseJson.message.length; i++){
         $('.results-img').append(
-            `<img src="${responseJson.message[i]}" class="results-img">`
+            //console.log(<img src=${responseJson.message[i]} class="results-img">)
+            `<img src=${responseJson.message[i]} class="results-img">`
         )
     }
     $('.results').removeClass('hidden');
@@ -25,6 +26,7 @@ function displayResults(responseJson){
 function manipForm(){
     $('form').submit(event =>{
         event.preventDefault();
+        //console.log(input)
         let input =$('input').val();
         getImage(input);
     })
